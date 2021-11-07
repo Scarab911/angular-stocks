@@ -9,6 +9,7 @@ import { StockComponent } from './components/stock/stock.component';
 import { HeaderComponent } from './components/header/header.component';
 import { StockInfoComponent } from './components/stock-info/stock-info.component';
 import { StockDescriptionComponent } from './components/stock-description/stock-description.component';
+import { AddStockFormComponent } from './components/add-stock-form/add-stock-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { StockDescriptionComponent } from './components/stock-description/stock-
     StockComponent,
     HeaderComponent,
     StockInfoComponent,
-    StockDescriptionComponent
+    StockDescriptionComponent,
+    AddStockFormComponent
   ],
   imports: [
     BrowserModule,

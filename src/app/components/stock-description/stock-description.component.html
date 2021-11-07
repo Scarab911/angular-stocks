@@ -1,2 +1,20 @@
-<p>stock-description works!</p>
-<h1>{{stock.name}}</h1>
+<div class="stock-desc">
+    <div class="stock-info">
+        <h1>{{stock.name}}</h1>
+        <h3>Short code: {{stock.code}}</h3>
+        <div class="prices">
+            <p>Current Price: <span>{{stock.price}} Eur</span></p>
+            <p>Previous price: <span>{{stock.previousPrice}}
+                    Eur</span>
+            </p>
+        </div>
+        <p>Exchange: <span>{{stock.exchange}}</span>
+        <p>Is favorite: <span>{{stock.favorite? 'Yes' : 'No'}}</span>
+        </p>
+
+
+    </div>
+    <button>Make Favorite</button>
+    <img src="../../../assets/images/btc price graph.png"
+        alt="stock image">
+</div>

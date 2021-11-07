@@ -20,7 +20,23 @@ export class StocksService {
       console.log('stocks returned', this.stocksList);
     });
   }
-  
+
+  public addStock(newStock: Stock): void {
+    const request = this.http.post('http://localhost:3000/api/stock', newStock);
+
+    request.subscribe((response: any) => {
+      console.log('stocks returned', response);
+    });
+  }
+  // public makeFavorite(): void {
+  //   const request = this.http.patch('http://localhost:3000/api/stock');
+
+  //   request.subscribe((response: any) => {
+  //     this.stocksList = response;
+  //     console.log('stocks returned', this.stocksList);
+  //   });
+  // }
+
   public getStockByCode(code: string): Stock {
     const stock = this.stocksList.find((obj) => obj.code == code);
     console.log(stock);
