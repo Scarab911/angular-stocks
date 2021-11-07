@@ -6,7 +6,7 @@ import { Stock } from '../models/stock';
   providedIn: 'root'
 })
 export class StocksService {
-  private stocksList: Stock [] = [];
+  public stocksList: Stock [] = [];
 
   constructor(private http: HttpClient) {
 
@@ -17,6 +17,7 @@ export class StocksService {
 
     request.subscribe((response: any) => {
       this.stocksList = response;
+      console.log('stocks returned', this.stocksList);
     });
   }
   

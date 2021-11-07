@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Stock } from 'src/app/models/stock';
 import { StocksService } from 'src/app/services/stocks.service';
 
@@ -8,11 +8,12 @@ import { StocksService } from 'src/app/services/stocks.service';
   styleUrls: ['./stock.component.scss']
 })
 export class StockComponent implements OnInit {
-  public item!: Stock;
+  @Input()
+    public stock!: Stock;
 
   constructor(public stocksService: StocksService) { }
 
   ngOnInit(): void {
   }
-
+  
 }
