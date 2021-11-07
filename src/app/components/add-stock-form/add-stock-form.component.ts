@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Stock } from 'src/app/models/stock';
 import { StocksService } from 'src/app/services/stocks.service';
 
@@ -11,7 +12,8 @@ import { StocksService } from 'src/app/services/stocks.service';
 export class AddStockFormComponent implements OnInit {
 
   constructor(
-              private stocksService: StocksService
+              private stocksService: StocksService,
+              private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +29,7 @@ export class AddStockFormComponent implements OnInit {
       favorite: form.form.controls.favorite.value,
     };
     this.stocksService.addStock(stock);
-    form.form.reset();   
+    form.form.reset(); 
+    // this.router.navigate(['/']);  
   }
 }

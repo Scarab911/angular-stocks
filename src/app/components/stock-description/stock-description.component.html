@@ -14,7 +14,10 @@
 
 
     </div>
-    <button>Make Favorite</button>
+    <button *ngIf="!stock.favorite">Make
+        Favorite</button>
+    <button [routerLink]="['/market/edit',stock.code]">Edit
+        Stock</button>
     <img src="../../../assets/images/btc price graph.png"
         alt="stock image">
 </div>
