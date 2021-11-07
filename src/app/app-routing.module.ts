@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { StockInfoComponent } from './components/stock-info/stock-info.component';
 import { StocksListComponent } from './components/stocks-list/stocks-list.component';
 
 const routes: Routes = [
@@ -8,8 +9,17 @@ const routes: Routes = [
     component: StocksListComponent
   },
   {
+    path: 'market/:code',
+    component: StockInfoComponent
+  },
+  {
+    path: 'market',
+    component: StockInfoComponent
+  },
+  {
     path: '',
-    component: StocksListComponent
+    redirectTo: 'home',
+    pathMatch: 'full'
   }
 ];
 

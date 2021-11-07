@@ -1,10 +1,20 @@
 <div class="container">
-    STOCK INFO CONTENT
-    <h2>Stock name: {{stock.name}}</h2>
-    <h3>Stock code: {{stock.code}}</h3>
-    <p>Price: {{stock.price}}</p>
-    <p>Previous price: {{stock.previousPrice}}</p>
-    <p>Exchange name: {{stock.exchange}}</p>
-    <p>Is favorite: {{stock.favorite? 'yes' : 'no'}}</p>
-    <hr>
+    <h2 [routerLink]="['/market', stock.code]">
+        {{stock.name}}</h2>
+    <h3>Short code: {{stock.code}}</h3>
+    <div class="prices">
+        <p>Price: {{stock.price}} Eur</p>
+        <p>Previous price: {{stock.previousPrice}} Eur</p>
+    </div>
+    <!-- <p>Exchange: {{stock.exchange}}</p> -->
+    <!-- <p>Is favorite: {{stock.favorite? 'yes' : 'no'}}</p> -->
+    <img class="graph"
+        src="../../../assets/images/stock green.png"
+        alt="graph pic"
+        [routerLink]="['/market', stock.code]">
+    <div class="operations">
+        <button>BUY</button>
+        <button>SELL</button>
+    </div>
+    <!-- <button [routerLink]="['/market', stock.code]">Dive into</button> -->
 </div>

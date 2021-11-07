@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 290px;
+  gap: 10px;
+  padding: 25px;
+  border: 1px solid #fff3;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: #fff;
+
+  .prices {
+    display: flex;
+    gap: 15px;
+  }
+  .operations {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    justify-content: space-around;
+    button {
+      padding: 10px 25px;
+      border: 1px solid aquamarine;
+      background-color: azure;
+    }
+    button:hover {
+      background-color: aquamarine;
+      border: 1ps solid azure;
+    }
+  }
+  .graph {
+    align-self: center;
+  }
+}
+
+h2,
+button,
+.graph {
+  cursor: pointer;
+}

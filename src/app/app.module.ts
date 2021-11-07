@@ -6,12 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StocksListComponent } from './components/stocks-list/stocks-list.component';
 import { StockComponent } from './components/stock/stock.component';
+import { HeaderComponent } from './components/header/header.component';
+import { StockInfoComponent } from './components/stock-info/stock-info.component';
+import { StockDescriptionComponent } from './components/stock-description/stock-description.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StocksListComponent,
-    StockComponent
+    StockComponent,
+    HeaderComponent,
+    StockInfoComponent,
+    StockDescriptionComponent
   ],
   imports: [
     BrowserModule,

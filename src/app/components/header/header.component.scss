@@ -1,0 +1,32 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #ffffffa8;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+  img {
+    height: 50px;
+    cursor: pointer;
+  }
+
+  .links {
+    display: flex;
+    gap: 25px;
+    list-style-type: none;
+    font-size: 18px;
+    margin-right: 40px;
+    font-weight: 700;
+
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}

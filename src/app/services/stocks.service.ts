@@ -21,4 +21,13 @@ export class StocksService {
     });
   }
   
+  public getStockByCode(code: string): Stock {
+    const stock = this.stocksList.find((obj) => obj.code == code);
+    console.log(stock);
+    if(stock !== undefined){
+       return stock
+      } else {
+        return this.stocksList[0];
+      }
+  }
 }

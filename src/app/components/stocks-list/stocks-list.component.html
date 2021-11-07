@@ -1,5 +1,6 @@
 <h1>Available Stocks</h1>
-<ng-container *ngFor="let stock of stocksService.stocksList ">
-
-    <app-stock [stock]="stock"></app-stock>
-</ng-container>
+<div class="container">
+    <ng-container *ngFor="let stock of stocksService.stocksList ">
+        <app-stock [stock]="stock"></app-stock>
+    </ng-container>
+</div>
