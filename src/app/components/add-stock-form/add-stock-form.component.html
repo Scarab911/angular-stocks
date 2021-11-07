@@ -1,1 +1,102 @@
-<p>add-stock-form works!</p>
+<div class="container">
+
+    <h1 style="text-align: center">Enter data to add additional
+        stock
+    </h1>
+
+    <form #addForm="ngForm">
+
+        <div class="form-group">
+            <label for="stock-name">Enter name:</label>
+            <input type="text"
+                required
+                name="name"
+                ngModel
+                minlength="1"
+                maxlength="15"
+                placeholder="Enter name"
+                #nameInput="ngModel">
+
+            <div class="erorr"
+                *ngIf="nameInput.touched && !nameInput.valid">
+                Invalid stock name!
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="stock-code">Enter stock code
+                abrevation:</label>
+            <input type="text"
+                required
+                name="code"
+                ngModel
+                minlength="3"
+                maxlength="5"
+                placeholder="Enter code"
+                #codeInput="ngModel">
+
+            <div class="error"
+                *ngIf="codeInput.touched && !codeInput.valid">
+                Invalid stock code!
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="stock-price">Enter price:</label>
+            <input type="number"
+                required
+                name="price"
+                ngModel
+                minlength="1"
+                maxlength="5"
+                placeholder="Price"
+                #priceInput="ngModel">
+            <div *ngIf="priceInput.touched && !priceInput.valid">
+                Invalid price!
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="stock-prevPrice">Enter previous price:</label>
+            <input type="number"
+                required
+                name="previousPrice"
+                ngModel
+                minlength="1"
+                maxlength="5"
+                placeholder="Price"
+                #prevPriceInput="ngModel">
+            <div
+                *ngIf="prevPriceInput.touched && !prevPriceInput.valid">
+                Invalid price!
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="stock-exchange">Enter exchange name:</label>
+            <input type="text"
+                required
+                name="exchange"
+                ngModel
+                minlength="3"
+                maxlength="25"
+                placeholder="Exchange"
+                #exchangeInput="ngModel">
+
+            <div *ngIf="exchangeInput.touched &&!exchangeInput.valid">
+                Invalid exchange name!
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="stock-favorite">Choose favorite</label>
+            <input type="checkbox"
+                name="favorite"
+                ngModel
+                #favoriteInput="ngModel">
+        </div>
+
+        <button (click)="createStock(addForm)"
+            [disabled]="addForm.invalid">Send</button>
+    </form>
+</div>

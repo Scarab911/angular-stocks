@@ -25,7 +25,7 @@ export class StocksService {
     const request = this.http.post('http://localhost:3000/api/stock', newStock);
 
     request.subscribe((response: any) => {
-      console.log('stocks returned', response);
+      console.log('Response from server:', response);
     });
   }
   // public makeFavorite(): void {

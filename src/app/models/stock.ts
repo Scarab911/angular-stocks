@@ -8,12 +8,4 @@ export class Stock {
         public exchange: string,
         public favorite: boolean,
     ){}
-
-    public getName(): string {
-        return this.name
-    }
-
-    public getCode(): string {
-        return this.code
-    }
 }
