@@ -4,17 +4,17 @@
         information
     </h1>
 
-    <form #addForm="ngForm">
+    <form #editForm="ngForm">
 
         <div class="form-group">
             <label for="stock-name">Enter name:</label>
             <input type="text"
-                required
                 name="name"
                 ngModel
                 minlength="1"
-                maxlength="15"
+                maxlength="25"
                 placeholder="Enter name"
+                [(ngModel)]="stock.name"
                 #nameInput="ngModel">
 
             <div class="erorr"
@@ -24,32 +24,14 @@
         </div>
 
         <div class="form-group">
-            <label for="stock-code">Enter stock code
-                abrevation:</label>
-            <input type="text"
-                readonly
-                name="code"
-                ngModel
-                minlength="3"
-                maxlength="5"
-                placeholder="Enter code"
-                #codeInput="ngModel">
-
-            <div class="erorr"
-                *ngIf="codeInput.touched && !codeInput.valid">
-                Invalid stock code!
-            </div>
-        </div>
-
-        <div class="form-group">
             <label for="stock-price">Enter price:</label>
             <input type="number"
-                required
                 name="price"
                 ngModel
                 minlength="1"
                 maxlength="5"
                 placeholder="Price"
+                [(ngModel)]="stock.price"
                 #priceInput="ngModel">
 
             <div class="erorr"
@@ -59,31 +41,14 @@
         </div>
 
         <div class="form-group">
-            <label for="stock-prevPrice">Enter previous price:</label>
-            <input type="number"
-                readonly
-                name="previousPrice"
-                ngModel
-                minlength="1"
-                maxlength="5"
-                placeholder="Price"
-                #prevPriceInput="ngModel">
-
-            <div class="erorr"
-                *ngIf="prevPriceInput.touched && !prevPriceInput.valid">
-                Invalid price!
-            </div>
-        </div>
-
-        <div class="form-group">
             <label for="stock-exchange">Enter exchange name:</label>
             <input type="text"
-                required
                 name="exchange"
                 ngModel
                 minlength="3"
                 maxlength="25"
                 placeholder="Exchange"
+                [(ngModel)]="stock.exchange"
                 #exchangeInput="ngModel">
 
             <div class="erorr"
@@ -97,11 +62,12 @@
             <input type="checkbox"
                 name="favorite"
                 ngModel
+                [(ngModel)]="stock.favorite"
                 #favoriteInput="ngModel">
         </div>
 
-        <button [disabled]="addForm.invalid">Send</button>
+
+        <button (click)="editStock()"
+            [disabled]="editForm.invalid">Send</button>
     </form>
 </div>
-
-<!-- (click)="createStock(addForm)" -->

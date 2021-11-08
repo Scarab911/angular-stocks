@@ -30,6 +30,6 @@ export class AddStockFormComponent implements OnInit {
     };
     this.stocksService.addStock(stock);
     form.form.reset(); 
-    // this.router.navigate(['/']);  
+    this.router.navigate(['/']);  
   }
 }

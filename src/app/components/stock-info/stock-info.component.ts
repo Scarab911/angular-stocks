@@ -18,9 +18,15 @@ export class StockInfoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.stocksService.getAllStocks();
+    // this.code = this.route.snapshot.params['code'];
+    // this.stock = this.stocksService.getStockByCode(this.code);
+
     this.code = this.route.snapshot.params['code'];
-    this.stock = this.stocksService.getStockByCode(this.code);
+    this.stocksService.getShowStock(this.code).subscribe((resp: Stock[]) => {
+      this.stock = resp[0];
+      console.log('Serverio atsakymas:', resp);
+      console.log(this.stock);
+    });
   }
 
 }

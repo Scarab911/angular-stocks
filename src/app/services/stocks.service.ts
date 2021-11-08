@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Stock } from '../models/stock';
 
 @Injectable({
@@ -28,14 +29,18 @@ export class StocksService {
       console.log('Response from server:', response);
     });
   }
-  // public makeFavorite(): void {
-  //   const request = this.http.patch('http://localhost:3000/api/stock');
 
-  //   request.subscribe((response: any) => {
-  //     this.stocksList = response;
-  //     console.log('stocks returned', this.stocksList);
-  //   });
-  // }
+  public editStock(stock: Stock): Observable<any> {
+    return this.http.patch('http://localhost:3000/api/stock/' + stock.code, stock);
+
+    // request.subscribe((response: any) => {
+    //   console.log('Response from server:', response);
+    // });
+  }
+
+  public getShowStock(code: string): Observable<Stock[]> {
+    return this.http.get<Stock[]>('http://localhost:3000/api/stock?q=' + code);
+  }
 
   public getStockByCode(code: string): Stock {
     const stock = this.stocksList.find((obj) => obj.code == code);
