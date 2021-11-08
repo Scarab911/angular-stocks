@@ -14,7 +14,7 @@
                 minlength="1"
                 maxlength="25"
                 placeholder="Enter name"
-                [(ngModel)]="stock.name"
+                [(ngModel)]="stock && stock.name"
                 #nameInput="ngModel">
 
             <div class="erorr"
@@ -31,7 +31,7 @@
                 minlength="1"
                 maxlength="5"
                 placeholder="Price"
-                [(ngModel)]="stock.price"
+                [(ngModel)]="stock && stock.price"
                 #priceInput="ngModel">
 
             <div class="erorr"
@@ -48,7 +48,7 @@
                 minlength="3"
                 maxlength="25"
                 placeholder="Exchange"
-                [(ngModel)]="stock.exchange"
+                [(ngModel)]="stock && stock.exchange"
                 #exchangeInput="ngModel">
 
             <div class="erorr"
@@ -62,7 +62,7 @@
             <input type="checkbox"
                 name="favorite"
                 ngModel
-                [(ngModel)]="stock.favorite"
+                [(ngModel)]="stock && stock.favorite"
                 #favoriteInput="ngModel">
         </div>
 

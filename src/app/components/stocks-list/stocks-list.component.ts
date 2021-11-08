@@ -15,7 +15,6 @@ export class StocksListComponent implements OnInit {
   ngOnInit(): void {
     this.stocksService.getAllStocks().subscribe((response) => {
       this.allStocksList = response;
-      console.log(this.allStocksList);
     });
   }
 

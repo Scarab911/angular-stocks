@@ -1,26 +1,26 @@
 <div class="stock-desc">
     <div class="stock-info">
-        <h1>{{stock.name}}</h1>
-        <h3>Short code: {{stock.code}}</h3>
+        <h1>{{stock?.name}}</h1>
+        <h3>Short code: {{stock?.code}}</h3>
         <div class="prices">
-            <p>Current Price: <span>{{stock.price}} Eur</span></p>
-            <p>Previous price: <span>{{stock.previousPrice}}
+            <p>Current Price: <span>{{stock?.price}} Eur</span></p>
+            <p>Previous price: <span>{{stock?.previousPrice}}
                     Eur</span>
             </p>
         </div>
-        <p>Exchange: <span>{{stock.exchange}}</span>
-        <p>Is favorite: <span>{{stock.favorite? 'Yes' : 'No'}}</span>
+        <p>Exchange: <span>{{stock?.exchange}}</span>
+        <p>Is favorite: <span>{{stock?.favorite? 'Yes' : 'No'}}</span>
         </p>
 
 
     </div>
-    <button *ngIf="!stock.favorite"
+    <button *ngIf="!stock?.favorite"
         (click)="makeFavorite()">Make
         Favorite</button>
-    <button *ngIf="stock.favorite"
+    <button *ngIf="stock?.favorite"
         (click)="makeUnFavorite()">Remove
         Favorite</button>
-    <button [routerLink]="['/market/edit',stock.code]">Edit
+    <button [routerLink]="['/market/edit',stock?.code]">Edit
         Stock</button>
     <img src="../../../assets/images/btc price graph.png"
         alt="stock image">

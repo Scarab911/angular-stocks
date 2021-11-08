@@ -13,6 +13,8 @@ import { StockDescriptionComponent } from './components/stock-description/stock-
 import { AddStockFormComponent } from './components/add-stock-form/add-stock-form.component';
 import { EditStockFormComponent } from './components/edit-stock-form/edit-stock-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EditStockFormComponent
   ],
   imports: [
+    MatSidenavModule,
+    MatIconModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

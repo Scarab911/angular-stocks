@@ -18,14 +18,10 @@ export class StockDescriptionComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    console.log('akcijas pries uzkrovima:',this.stock);
-
     this.code = this.route.snapshot.params['code'];
     this.stocksService.getStockInfo(this.code).subscribe((resp: Stock[]) => {
       this.stock = resp[0];
-      console.log('Serverio atsakymas:', resp);
     });
-    console.log('akcija po kreipimosi i serva',this.stock);
   }
 
   public makeFavorite(){
