@@ -12,6 +12,7 @@ import { StockInfoComponent } from './components/stock-info/stock-info.component
 import { StockDescriptionComponent } from './components/stock-description/stock-description.component';
 import { AddStockFormComponent } from './components/add-stock-form/add-stock-form.component';
 import { EditStockFormComponent } from './components/edit-stock-form/edit-stock-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EditStockFormComponent } from './components/edit-stock-form/edit-stock-
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
