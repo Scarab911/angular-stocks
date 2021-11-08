@@ -28,4 +28,12 @@ export class StockDescriptionComponent implements OnInit {
     console.log('akcija po kreipimosi i serva',this.stock);
   }
 
+  public makeFavorite(){
+    this.stock.favorite = true;
+    this.stocksService.editStock(this.stock).subscribe((resp) => {})
+  }
+  public makeUnFavorite(){
+    this.stock.favorite = false;
+    this.stocksService.editStock(this.stock).subscribe((resp) => {})
+  }
 }

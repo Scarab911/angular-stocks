@@ -24,6 +24,8 @@ export class EditStockFormComponent implements OnInit {
       console.log('Serverio atsakymas:', resp);
       this.stock = resp[0];
     });
+    console.log('laba diena');
+    
   }
 
   public editStock(): void {

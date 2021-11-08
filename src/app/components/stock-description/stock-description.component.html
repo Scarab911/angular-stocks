@@ -14,7 +14,11 @@
 
 
     </div>
-    <button *ngIf="!stock.favorite">Make
+    <button *ngIf="!stock.favorite"
+        (click)="makeFavorite()">Make
+        Favorite</button>
+    <button *ngIf="stock.favorite"
+        (click)="makeUnFavorite()">Remove
         Favorite</button>
     <button [routerLink]="['/market/edit',stock.code]">Edit
         Stock</button>

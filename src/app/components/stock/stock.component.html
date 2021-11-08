@@ -1,7 +1,8 @@
 <div class="container">
     <h2 [routerLink]="['/market', stock.code]">
         {{stock.name}}</h2>
-    <h3>Short code: {{stock.code}}</h3>
+    <h3 [routerLink]="['/market', stock.code]">Short code:
+        {{stock.code}}</h3>
     <div class="prices">
         <p>Price: {{stock.price}} Eur</p>
         <p>Previous price: {{stock.previousPrice}} Eur</p>
