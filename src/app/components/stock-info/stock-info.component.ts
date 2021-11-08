@@ -9,8 +9,8 @@ import { StocksService } from 'src/app/services/stocks.service';
   styleUrls: ['./stock-info.component.scss']
 })
 export class StockInfoComponent implements OnInit {
-  public code!:string;
-  public stock!: Stock;
+  // public code!:string;
+  // public stock!: Stock;
 
   constructor(
               private route: ActivatedRoute,
@@ -19,14 +19,11 @@ export class StockInfoComponent implements OnInit {
 
   ngOnInit(): void {
     // this.code = this.route.snapshot.params['code'];
-    // this.stock = this.stocksService.getStockByCode(this.code);
-
-    this.code = this.route.snapshot.params['code'];
-    this.stocksService.getShowStock(this.code).subscribe((resp: Stock[]) => {
-      this.stock = resp[0];
-      console.log('Serverio atsakymas:', resp);
-      console.log(this.stock);
-    });
+    // this.stocksService.getShowStock(this.code).subscribe((resp: Stock[]) => {
+    //   this.stock = resp[0];
+    //   console.log('Serverio atsakymas:', resp);
+    //   console.log(this.stock);
+    // });
   }
 
 }

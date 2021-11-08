@@ -20,18 +20,16 @@ export class EditStockFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.code = this.route.snapshot.params['code'];
-    this.stocksService.getShowStock(this.code).subscribe((resp: Stock[]) => {
+    this.stocksService.getStockInfo(this.code).subscribe((resp: Stock[]) => {
       console.log('Serverio atsakymas:', resp);
       this.stock = resp[0];
     });
   }
 
   public editStock(): void {
-    console.log('Edit mygtukas paspausta');
-    console.log('tai ka paduodam i editStock',this.stock);
     this.stocksService.editStock(this.stock).subscribe((response) => {
       console.log(response);
-      // this.router.navigate(['/']);
+      this.router.navigate(['/']);
     });
   }
 }

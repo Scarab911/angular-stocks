@@ -8,15 +8,15 @@ import { StocksService } from 'src/app/services/stocks.service';
   styleUrls: ['./stocks-list.component.scss']
 })
 export class StocksListComponent implements OnInit {
-  public allStocksList!: Stock [];
+  public allStocksList: Stock []=[];
 
   constructor(public stocksService: StocksService) { }
 
   ngOnInit(): void {
-    this.stocksService.getAllStocks();
-    // this.allStocksList = this.stocksService.stocksList;
-    // console.log('Stocks is API:', this.stocksService.stocksList);
-    
+    this.stocksService.getAllStocks().subscribe((response) => {
+      this.allStocksList = response;
+      console.log(this.allStocksList);
+    });
   }
 
 }
