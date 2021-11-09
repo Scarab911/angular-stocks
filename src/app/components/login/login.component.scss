@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 250px;
+    gap: 15px;
+    border: 1px solid aqua;
+    border-radius: 5px;
+    padding: 15px;
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      input {
+        line-height: 24px;
+        border: none;
+        color: darkblue;
+      }
+    }
+    button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      background-color: aquamarine;
+      cursor: pointer;
+      width: 50%;
+      margin-left: 50px;
+    }
+    button:hover {
+      background-color: aqua;
+      transition: 0.5s ease-out;
+    }
+  }
+  a {
+    margin-top: 20px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
