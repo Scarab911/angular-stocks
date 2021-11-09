@@ -96,9 +96,13 @@
                 #favoriteInput="ngModel">
         </div>
 
-        <button (click)="createStock(addForm)"
-            (click)="toggleDisplay()"
-            [routerLink]="['/home']"
-            [disabled]="addForm.invalid">Send</button>
+        <div class="buttons">
+            <button (click)="createStock(addForm)"
+                (click)="toggleDisplay()"
+                [routerLink]="['/home']"
+                [disabled]="addForm.invalid">Send</button>
+            <button (click)="toggleDisplay()">Close</button>
+        </div>
+
     </form>
 </div>

@@ -32,7 +32,10 @@
         color: red;
       }
     }
-
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
     button {
       padding: 10px 20px;
       background-color: #fff;

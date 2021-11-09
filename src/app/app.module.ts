@@ -15,6 +15,8 @@ import { EditStockFormComponent } from './components/edit-stock-form/edit-stock-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {MatIconModule} from '@angular/material/icon';
     StockInfoComponent,
     StockDescriptionComponent,
     AddStockFormComponent,
-    EditStockFormComponent
+    EditStockFormComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     MatSidenavModule,
