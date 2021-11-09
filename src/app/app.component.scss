@@ -1,0 +1,30 @@
+.main-container {
+  display: flex;
+}
+
+.form {
+  width: 300px;
+  background-color: aqua;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px;
+  animation: slideIn;
+  animation-duration: 3s;
+}
+
+.main-content {
+  //   width: 100%;
+  align-self: center;
+}
+
+//Animations
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}

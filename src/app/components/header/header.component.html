@@ -7,8 +7,8 @@
     <nav>
         <div class="links">
             <a [routerLink]="['/home']">Home</a>
-            <a [routerLink]="['/addStock']">Add Stock</a>
             <a [routerLink]="['/contacts']">Contacts</a>
+            <a (click)="toggleDisplay()">Add Stock</a>
         </div>
     </nav>
 </header>

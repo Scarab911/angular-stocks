@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Input() showForm!:boolean;
+  @Output() showFormChange = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
+  }
+
+  public toggleDisplay(): void {
+    this.showForm = !this.showForm;
+    console.log('reiksme isShow:', this.showForm);
+    this.showFormChange.emit(this.showForm)
   }
 
 }
