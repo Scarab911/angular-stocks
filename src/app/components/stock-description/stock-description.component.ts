@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Stock } from 'src/app/models/stock';
+import { AccessService } from 'src/app/services/access.service';
 import { StocksService } from 'src/app/services/stocks.service';
 
 @Component({
@@ -12,9 +13,13 @@ export class StockDescriptionComponent implements OnInit {
   public stock!: Stock;
   public code: string = '';
 
+  @Input() showForm!:boolean;
+  @Output() showFormChange = new EventEmitter<boolean>();
+
   constructor(
-    private stocksService: StocksService,
-    private route: ActivatedRoute
+              private stocksService: StocksService,
+              private route: ActivatedRoute,
+              private accessService: AccessService
     ) { }
 
   ngOnInit(): void {
@@ -31,5 +36,15 @@ export class StockDescriptionComponent implements OnInit {
   public makeUnFavorite(){
     this.stock.favorite = false;
     this.stocksService.editStock(this.stock).subscribe((resp) => {})
+  }
+
+  public get isLogged(): boolean {
+    return this.accessService.isLoggedIn
+  }
+
+  public toggleDisplay(): void {
+    this.showForm = !this.showForm;
+    console.log('reiksme isShow:', this.showForm);
+    this.showFormChange.emit(this.showForm)
   }
 }

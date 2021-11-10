@@ -1,1 +1,10 @@
-<stock-description></stock-description>
+<div class="main-container">
+
+    <edit-stock-form class="form "
+        [hidden]="isShowForm"
+        [(showForm)]="isShowForm"></edit-stock-form>
+
+    <div class="main-content">
+        <stock-description></stock-description>
+    </div>
+</div>

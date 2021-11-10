@@ -1,8 +1,6 @@
 <div class="container">
 
-    <h1 style="text-align: center">Enter data to add additional
-        stock
-    </h1>
+    <!-- <h1 style="text-align: center">Enter data:</h1> -->
 
     <form #addForm="ngForm">
 
@@ -99,8 +97,8 @@
         <div class="buttons">
             <button (click)="createStock(addForm)"
                 (click)="toggleDisplay()"
-                [routerLink]="['/home']"
-                [disabled]="addForm.invalid">Send</button>
+                [disabled]="addForm.invalid"><a
+                    href="/home">Send</a></button>
             <button (click)="toggleDisplay()">Close</button>
         </div>
 

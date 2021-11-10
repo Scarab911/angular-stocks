@@ -1,8 +1,6 @@
 <div class="container">
 
-    <h1 style="text-align: center">Enter data to edit stock
-        information
-    </h1>
+    <h1 style="text-align: center">Edit stock</h1>
 
     <form #editForm="ngForm">
 
@@ -66,8 +64,12 @@
                 #favoriteInput="ngModel">
         </div>
 
+        <div class="buttons">
+            <button (click)="editStock()"
+                (click)="toggleDisplay()"
+                [disabled]="editForm.invalid">Send</button>
+            <button (click)="toggleDisplay()">Close</button>
+        </div>
 
-        <button (click)="editStock()"
-            [disabled]="editForm.invalid">Send</button>
     </form>
 </div>
