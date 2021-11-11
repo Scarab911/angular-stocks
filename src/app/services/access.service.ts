@@ -38,11 +38,11 @@ export class AccessService {
     return this._token;
   }
 
-  public clearSesion(): void {
-    window.sessionStorage.clear();
+  public LogOut(): void {
+    window.sessionStorage.removeItem('token');
   }
 }
-//pasirasom interface ir susikonkretinam gaunam login objekto tipa! nera butina bet..
+//pasirasom interface ir susikonkretinam gaunama login objekto tipa! nera butina bet..
 export interface LoginResponse{
   msg: string,
   token: string

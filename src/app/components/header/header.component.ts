@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public clearSesion(): void {
-    this.accessService.clearSesion();
+    this.accessService.LogOut();
   //   this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
   //  this.router.navigate(['/home']));
     // this.router.navigate(['/login']);
