@@ -1,8 +1,8 @@
 <app-header [(showForm)]="isShowForm"></app-header>
 
 <div class="main-container">
-    <app-add-stock-form class="form "
-        [hidden]="isShowForm"
+    <app-add-stock-form *ngIf="isShowForm"
+        class="form "
         [(showForm)]="isShowForm"></app-add-stock-form>
     <router-outlet class="main-content"></router-outlet>
 </div>

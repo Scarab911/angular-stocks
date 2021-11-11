@@ -1,7 +1,7 @@
 <div class="main-container">
 
     <edit-stock-form class="form "
-        [hidden]="isShowForm"
+        *ngIf="isShowForm"
         [(showForm)]="isShowForm"></edit-stock-form>
 
     <div class="main-content">
