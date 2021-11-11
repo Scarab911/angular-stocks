@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stock-info.component.scss']
 })
 export class StockInfoComponent implements OnInit {
-  public isShowForm:boolean = false;
+  public isShowForm:boolean = true;
 
   constructor(
  

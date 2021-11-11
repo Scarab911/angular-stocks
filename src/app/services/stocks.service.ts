@@ -54,12 +54,12 @@ export class StocksService {
     let headers: HttpHeaders = new HttpHeaders;
     headers = headers.set('X-AUTH-HEADER', this.accessService.token);
 
-    return this.http.patch('http://localhost:3000/api/stock/' + stock.code, stock, {
+    return this.http.patch(`http://localhost:3000/api/stock/${stock.code}`, stock, {
       headers:headers
     });
   }
 
-  public getStockInfo(code: string): Observable<Stock[]> {
+  public getStockInfo(code: string): Observable<Stock> {
     //tikrinam ar atkeliauja token'as
     if (!this.accessService.token) {
       throw new Error('You need acces ^^ to add more stocks!')
@@ -68,7 +68,7 @@ export class StocksService {
     let headers: HttpHeaders = new HttpHeaders;
     headers = headers.set('X-AUTH-HEADER', this.accessService.token);
 
-    return this.http.get<Stock[]>('http://localhost:3000/api/stock?q=' + code, {
+    return this.http.get<Stock>(`http://localhost:3000/api/stock/${code}`, {
       headers:headers
     });
   }

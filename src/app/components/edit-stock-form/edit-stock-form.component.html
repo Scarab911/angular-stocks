@@ -5,7 +5,7 @@
     <form #editForm="ngForm">
 
         <div class="form-group">
-            <label for="stock-name">Enter name:</label>
+            <label for="name">Enter name:</label>
             <input type="text"
                 name="name"
                 ngModel
@@ -22,7 +22,7 @@
         </div>
 
         <div class="form-group">
-            <label for="stock-price">Enter price:</label>
+            <label for="price">Enter price:</label>
             <input type="number"
                 name="price"
                 ngModel
@@ -39,7 +39,7 @@
         </div>
 
         <div class="form-group">
-            <label for="stock-exchange">Enter exchange name:</label>
+            <label for="exchange">Enter exchange name:</label>
             <input type="text"
                 name="exchange"
                 ngModel
@@ -56,7 +56,7 @@
         </div>
 
         <div class="form-group">
-            <label for="stock-favorite">Choose favorite</label>
+            <label for="favorite">Choose favorite</label>
             <input type="checkbox"
                 name="favorite"
                 ngModel
@@ -67,7 +67,8 @@
         <div class="buttons">
             <button (click)="editStock()"
                 (click)="toggleDisplay()"
-                [disabled]="editForm.invalid">Send</button>
+                [disabled]="editForm.invalid"><a
+                    href="market/{{stock?.code}}">Send</a></button>
             <button (click)="toggleDisplay()">Close</button>
         </div>
 

@@ -24,8 +24,8 @@ export class StockDescriptionComponent implements OnInit {
 
   ngOnInit(): void {
     this.code = this.route.snapshot.params['code'];
-    this.stocksService.getStockInfo(this.code).subscribe((resp: Stock[]) => {
-      this.stock = resp[0];
+    this.stocksService.getStockInfo(this.code).subscribe((resp: Stock) => {
+      this.stock = resp;
     });
   }
 

@@ -2,6 +2,14 @@ h1 {
   text-align: center;
   margin-top: 50px;
 }
+h2 {
+  text-align: center;
+  margin-top: 200px;
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

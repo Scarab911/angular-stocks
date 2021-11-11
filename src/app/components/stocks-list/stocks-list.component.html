@@ -1,4 +1,8 @@
-<h1>Available Stocks to Trade</h1>
+<h2 *ngIf="!isLogged">YOU NEED TO <a
+        [routerLink]="['/login']">LOGIN</a> FIRST, SAY THANKS TO BACK
+    END
+    PEOPLE</h2>
+<h1 *ngIf="isLogged">Available Stocks to Trade</h1>
 <div class="container">
     <ng-container *ngFor="let stock of allStocksList">
         <app-stock [stock]="stock"></app-stock>

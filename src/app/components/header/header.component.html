@@ -7,10 +7,10 @@
     <nav>
         <div class="links">
             <a [routerLink]="['/home']">Home</a>
-            <a [routerLink]="['/contacts']">Contacts</a>
             <a (click)="toggleDisplay()"
                 *ngIf="isLogged">Add Stock</a>
-            <a [routerLink]="['/login']">Login</a>
+            <a [routerLink]="['/login']"
+                *ngIf="!isLogged">Login</a>
             <a (click)="clearSesion()"
                 href="/login"
                 *ngIf="isLogged">LogOut</a>
